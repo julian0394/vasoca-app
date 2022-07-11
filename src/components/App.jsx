@@ -4,6 +4,7 @@ import { createTheme, ThemeProvider } from "@mui/material";
 // Componens
 import Nav from "./Nav";
 import AppBody2 from "./AppBody2";
+import '../sty.css'
 
 function App() {
 

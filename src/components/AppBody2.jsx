@@ -1,10 +1,8 @@
 // Components
 import Sidebar from "./Sidebar";
-import Carrito from '../pages/Carrito';
 import InfoPanel from '../pages/InfoPanel';
 // MUI
-import { AppBar, Stack, Toolbar } from "@mui/material";
-import KeyboardBackspaceRoundedIcon from '@mui/icons-material/KeyboardBackspaceRounded';
+import { AppBar, Stack, Toolbar, Typography } from "@mui/material";
 // Assets
 import flavorList from "../flavorList";
 import styled from "@emotion/styled";
@@ -16,32 +14,41 @@ const AppBody2 = ({ drawerOpen, setDrawerOpen }) => {
   return (
     <Stack>
       {/* Sidebar solo desktop, en mobile es Drawer */}
+      <Sidebar drawerOpen={drawerOpen} setDrawerOpen={setDrawerOpen} />
       <main>
         <InfoPanel />
 
         {/* 
           TODO: 
-          - Renderizar una 'List' de 'ProductItem'
           - Si la 'List' maeneja props de sticky mantiene el titulo de la categoria.
           - ListTitle?) nombre de linea, mapeo de items, repetir.
         */}
-        
-        <ProductItem />
-        <ProductItem />
-        <ProductItem />
-        <ProductItem />
-        <ProductItem />
-        <ProductItem />
-        <ProductItem />
-        <ProductItem />
-        <ProductItem />
-        <ProductItem />
-        <ProductItem />
-        <ProductItem />
-
-
 
         {/* Lista de productos */}
+        {
+          flavorList.map( line => {
+            return <div key={line.info.screen} id={line.info.screen}>
+              <Typography  variant="h6" component="h2">{line.info.name}</Typography>
+              {
+                line.flavors.map( flavor => {
+                  return (
+                    <ProductItem 
+                      key={flavor.name}
+                      name={flavor.name}
+                      category={flavor.category}
+                      shortDesc={flavor.shortDescription}
+                      longDesc={flavor.longDescription}
+                      img={flavor.img}
+                      mint={flavor.mint}
+                      line={line.info.screen}
+                      prices={line.info.price}
+                    />
+                  )
+                })
+              }
+            </div>
+          })
+        }
       </main>
     </Stack>
   )

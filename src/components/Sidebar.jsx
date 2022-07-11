@@ -38,8 +38,8 @@ const Sidebar = ({ drawerOpen, setDrawerOpen }) => {
 
   const handleLinkPressed = newRoute => {
     setDrawerOpen(false);
-    // dispatch(routeChanged(newRoute));
-    store.dispatch(routeChanged({route: newRoute}))
+    // // dispatch(routeChanged(newRoute));
+    // store.dispatch(routeChanged({route: newRoute}))
     console.log(route);
   }
 
@@ -48,7 +48,7 @@ const Sidebar = ({ drawerOpen, setDrawerOpen }) => {
   const sidebarContent = () => { //TODO: posible ClickAwayListener para cerrar  
     return (
       <>
-        {/* CABECERA ( X y titulo) */}
+        {/* CABECERA ( Cruz y titulo) */}
         { !desktopView &&
           <Box sx={{ display: 'flex', alignItems: 'center' }}>
             <IconButton sx={{ width: '2.5rem', margin: '9px' }}>
@@ -163,7 +163,6 @@ const Sidebar = ({ drawerOpen, setDrawerOpen }) => {
           >
             { sidebarContent() }
           </Drawer>
-
       }
     </>
   )
