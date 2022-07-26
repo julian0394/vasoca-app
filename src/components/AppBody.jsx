@@ -1,82 +1,82 @@
-import { useState, useEffect } from "react";
 // Components
 import Sidebar from "./Sidebar";
-import Carrito from '../pages/Carrito';
-import InfoPanel from '../pages/InfoPanel';
-import Insumos from '../pages/Insumos';
-import LowCost from '../pages/LowCost';
-import NicSalt from '../pages/NicSalt';
-import Premium from '../pages/Premium';
-import Tradicional from '../pages/Tradicional';
+import InfoBlock from './InfoBlock';
 // MUI
-import { AppBar, Box, Button, Container, IconButton, Stack, Toolbar, Typography, useMediaQuery } from "@mui/material";
-import KeyboardBackspaceRoundedIcon from '@mui/icons-material/KeyboardBackspaceRounded';
-// Assets
-import flavorList from "../flavorList";
-import styled from "@emotion/styled";
+import { Box, Drawer, Stack, Typography, useMediaQuery } from "@mui/material";
+import { useTheme } from "@emotion/react";
 // Redux
 import { useSelector } from "react-redux";
+import ProductItem from "./ProductItem";
 
-const AppBody = ({ drawerOpen, setDrawerOpen }) => {
+const AppBody2 = ({ drawerOpen, setDrawerOpen }) => {
+  const theme = useTheme();
+  const desktopView = useMediaQuery(theme.breakpoints.up('md'));
+  const productList = useSelector( state => state.products );
+  console.log(productList);
 
-  const { route } = useSelector( state => state.route );
-  
-  const flavors = flavorList;
-  
   return (
-    <Box /*sx={{width: '100vw', overflowY: 'none'}}*/>
-      {/* <StyTitleBar position="fixed" sx={{mt: '3.5rem', height: '3rem', width:'100%'}}>
-        <StyTitle>
-          <Typography 
-            variant="subtitle1" 
-            component="span" 
-            sx={{ml: 6, color: 'black', fontWeight: 'medium', letterSpacing: 0.5}}
+    <Stack>
+      { /* Sidebar solo desktop, en mobile es Drawer */
+        desktopView 
+        ? 
+          <Box flex={0.9} sx={{borderRight: '1px solid lightgray', /*width: '250px',*/ paddingTop: '60px', height: '90vh'}}>
+            <Sidebar 
+              setDrawerOpen={setDrawerOpen}
+            />
+          </Box>
+        :
+          <Drawer // TODO: cerrar drawer al clickear Backdrop
+            open={drawerOpen}
+            anchor="left"
           >
-            {'Linea_actual'}
-          </Typography>
-        </StyTitle>
-      </StyTitleBar> */}
+            <Sidebar 
+              drawerOpen={drawerOpen} 
+              setDrawerOpen={setDrawerOpen}
+            />
+          </Drawer>
+      }
+      <main>
+        <InfoBlock />
 
-      <Stack 
-        sx={{flexDirection: {sm: 'column', lg: 'row'}}} 
-        justifyContent="space-between" 
-        height="100vh"
-      >
-        <Sidebar drawerOpen={drawerOpen} setDrawerOpen={setDrawerOpen} />
+        {/* 
+          TODO: 
+          - Si la 'List' maeneja props de sticky mantiene el titulo de la categoria.
+          - ListTitle?) nombre de linea, mapeo de items, repetir.
+        */}
 
-        <Box flex={3} style={{backgroundColor: 'lightblue'}}>
-          holo main
-        </Box>
-
-        <InfoPanel />
-
-      </Stack>
-    </Box>
+        {/* Lista de productos */}
+        { 
+          productList.map( line => {
+            if( !line.info.disabled ) {
+              return (
+                <div key={line.id} id={line.info.screen}>
+                  {/* Titulo de la linea */}
+                  <Typography variant="h6" component="h2" sx={{marginLeft: '10px'}}>
+                    {line.name}
+                  </Typography>
+                  { /* Tarjetas de sabores de esa linea */
+                    line.flavors.map( flavor => (
+                      <ProductItem
+                        key={flavor.name}
+                        name={flavor.name}
+                        category={flavor.category}
+                        shortDesc={flavor.shortDescription}
+                        longDesc={flavor.longDescription}
+                        img={flavor.img}
+                        mint={flavor.mint}
+                        line={line.info.screen}
+                        prices={line.info.price}
+                      />
+                    ))
+                  }
+                </div>
+              )
+            }
+          })          
+        }
+      </main>
+    </Stack>
   )
-} 
-
-// Styles
-
-const StyTitleBar = styled(AppBar)`
-  display: flex;
-  justify-content: center;
-  margin-top: 3.5rem;
-  height: 3rem;
-  width: 100%;
-  background-color: #e7e7e7;
-`
-
-const StyTitle = styled(Toolbar)`
-  height: 1rem;
-  display: flex;
-  align-items: center;
-`
-
-const stackStyle = {
-  flexDirection: {
-    sm: 'column', 
-    md: 'row'
-  }
 }
 
-export default AppBody;
+export default AppBody2;

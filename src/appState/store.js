@@ -1,19 +1,20 @@
-
+// ESTO ES PARA SLICES
 import { configureStore } from '@reduxjs/toolkit';
-import routeReducer from './slices/routeSlice';
+import cartReducer from './slices/cartSlice';
+import productReducer from './slices/productSlice';
 
 const store = configureStore({ 
   reducer: { 
-    route: routeReducer,
-    // order: orderReducer,
+    cart: cartReducer,
+    products: productReducer,
   }
 });
-
+    
 export default store;
 
 /*
   STORE
-  - actual screen (boton seleccionado en sidebar + titulo en cabecera)
+  - current screen (boton seleccionado en sidebar + titulo en cabecera)
   - items on cart 
   - products (nombres + tamaños + precios = todo)
   - order (pedido + datos)

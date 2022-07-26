@@ -1,5 +1,22 @@
 import React, { useState } from 'react';
-import { Accordion, AccordionDetails, AccordionSummary, Button, ButtonGroup, Divider, FormControl, FormControlLabel, InputLabel, List, ListItem, ListItemButton, ListItemText, MenuItem, Paper, Radio, Select, Slider, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, ToggleButton, ToggleButtonGroup, Typography } from '@mui/material';
+import { 
+  Accordion, 
+  AccordionDetails, 
+  AccordionSummary, 
+  Button, 
+  ButtonGroup, 
+  FormControl, 
+  InputLabel, 
+  List, 
+  ListItem, 
+  ListItemText, 
+  MenuItem, 
+  Paper, 
+  Radio, 
+  Select, 
+  Slider, 
+  Typography 
+} from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import imgSabor from '../img/products/premium/tonyMontana.jpg';
 import styled from '@emotion/styled';

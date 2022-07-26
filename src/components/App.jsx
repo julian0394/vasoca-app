@@ -1,12 +1,26 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 // Style
 import { createTheme, ThemeProvider } from "@mui/material";
 // Componens
 import Nav from "./Nav";
-import AppBody2 from "./AppBody2";
+import AppBody from "./AppBody";
 import '../sty.css'
+// Firebase
+import { fetchProductData } from "../db/controller";
+// Redux
+import store from "../appState/store";
+import { Provider } from "react-redux";
+import { useDispatch } from 'react-redux'
+import { initState } from "../appState/slices/productSlice";
 
 function App() {
+  const dispatch = useDispatch();
+
+  useEffect( () => {
+    fetchProductData('lines').then( data => {
+      dispatch( initState(data) );
+    });
+  }, [dispatch] );
 
   const theme = createTheme({
     status: {
@@ -18,10 +32,12 @@ function App() {
 
   return (
     <>
-      <ThemeProvider theme={theme}>
-        <Nav setDrawerOpen={setDrawerOpen} />
-        <AppBody2 drawerOpen={drawerOpen} setDrawerOpen={setDrawerOpen} />
-      </ThemeProvider>
+      <Provider store={store}>
+        <ThemeProvider theme={theme}>
+          <Nav setDrawerOpen={setDrawerOpen} />
+          <AppBody drawerOpen={drawerOpen} setDrawerOpen={setDrawerOpen} />
+        </ThemeProvider>
+      </Provider>
     </>
   );
 }

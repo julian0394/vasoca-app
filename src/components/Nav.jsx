@@ -1,6 +1,6 @@
 import { useState } from 'react';
 // Logo
-import logo from '../img/logoVasoca.png'
+// import logo from '../img/logoVasoca.png';
 // MUI 
 import { 
   AppBar, 
@@ -44,7 +44,7 @@ const Nav = ({ setDrawerOpen }) => {
   }
   
   const handleEscPress = e => {
-    console.log(e.key)
+    // console.log(e.key)
     if( e.key === 'Escape' && inputValue === '')  
     setIsSearching(false);
   }
@@ -53,7 +53,6 @@ const Nav = ({ setDrawerOpen }) => {
 
   /* Dark Mode */
   const [darkMode, setDarkMode] = useState(false);
-
 
   if( isSearching && !desktopView ) {
     return (
@@ -66,7 +65,7 @@ const Nav = ({ setDrawerOpen }) => {
               edge="start"
               color="inherit"
               sx={buttonStyle}
-            >
+            > 
               <KeyboardBackspaceIcon />
             </IconButton>
             <StyInput 

@@ -10,6 +10,7 @@ const productList = [
       '60ml': 900,
       '120ml': 1700,
     },
+    disabled: false,
   },
   {
     id: 2,
@@ -21,6 +22,7 @@ const productList = [
       '60ml': 700,
       '120ml': 1300,
     },
+    disabled: false,
   },
   {
     id: 3,
@@ -30,6 +32,7 @@ const productList = [
     price: {
       '60ml': 400,
     },
+    disabled: false,
   },
   {
     id: 4,
@@ -39,6 +42,7 @@ const productList = [
     price: {
       '30ml': 1300,
     },
+    disabled: false,
   },
   {    
     id: 5,
@@ -48,6 +52,7 @@ const productList = [
     price: {
   
     },
+    disabled: true,
   },  
 ];
 

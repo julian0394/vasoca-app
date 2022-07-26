@@ -5,8 +5,8 @@ import productList from './productList';
 
 const flavorList = [
   {
+    name: 'Línea Premium',
     info: {
-      name: 'Línea Premium',
       screen: 'premium', 
       sizes: ['30ml', '60ml', '120ml'],
       price: [
@@ -21,7 +21,7 @@ const flavorList = [
         category: 'Tabaquil dulce',
         shortDescription: 'Tabaco dulce - Clon Tribeca',
         longDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus elementum posuere pretium. Suspendisse feugiat ornare nunc quis vestibulum. Proin iaculis ex non ante vulputate accumsan. Nam pharetra arcu id blandit hendrerit. Aenean id imperdiet sapien.',
-        img: '',
+        img: 'https://i.pravatar.cc/150?img=3',
         mint: false,
       },
       {
@@ -29,7 +29,7 @@ const flavorList = [
         category: 'Postre',
         shortDescription: 'Mezcla perfecta de vainillas y crema',
         longDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus elementum posuere pretium. Suspendisse feugiat ornare nunc quis vestibulum. Proin iaculis ex non ante vulputate accumsan. Nam pharetra arcu id blandit hendrerit. Aenean id imperdiet sapien.',
-        img: '',
+        img: 'https://i.pravatar.cc/150?img=Naruto',
         mint: false,
       },
       {
@@ -37,7 +37,7 @@ const flavorList = [
         category: 'Frutal',
         shortDescription: 'Deleitante mix frutal',
         longDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus elementum posuere pretium. Suspendisse feugiat ornare nunc quis vestibulum. Proin iaculis ex non ante vulputate accumsan. Nam pharetra arcu id blandit hendrerit. Aenean id imperdiet sapien.',
-        img: '',
+        img: 'https://i.pravatar.cc/150?img=PanteraRosa',
         mint: true,
       },
       {
@@ -45,7 +45,7 @@ const flavorList = [
         category: 'Postre',
         shortDescription: 'Cremoso sabor a galletitas de vainilla',
         longDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus elementum posuere pretium. Suspendisse feugiat ornare nunc quis vestibulum. Proin iaculis ex non ante vulputate accumsan. Nam pharetra arcu id blandit hendrerit. Aenean id imperdiet sapien.',
-        img: '',
+        img: 'https://i.pravatar.cc/150?img=Goku',
         mint: false,
       },
       {
@@ -53,14 +53,14 @@ const flavorList = [
         category: 'Tabaquil seco',
         shortDescription: 'Mezcla de tabaco intenso - Clon Capone',
         longDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus elementum posuere pretium. Suspendisse feugiat ornare nunc quis vestibulum. Proin iaculis ex non ante vulputate accumsan.',
-        img: '',
+        img: 'https://i.pravatar.cc/150?img=ElPadrino',
         mint: true
       }
     ]
   },
   {
+    name: 'Línea Tradicional',
     info: {
-      name: 'Línea Tradicional',
       screen: 'tradicional',
       sizes: ['30ml', '60ml', '120ml'],
       price: [
@@ -75,7 +75,7 @@ const flavorList = [
         category: 'Tabaquil dulce',
         shortDescription: 'Suave tabaco con miel',
         longDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus elementum posuere pretium. Suspendisse feugiat ornare nunc quis vestibulum. Proin iaculis ex non ante vulputate accumsan.',
-        img: '',
+        img: 'https://i.pravatar.cc/150?img=Optimus',
         mint: false
       },
       {
@@ -83,7 +83,7 @@ const flavorList = [
         category: 'Tabaquil seco',
         shortDescription: 'Tabaco seco y vainillado',
         longDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus elementum posuere pretium. Suspendisse feugiat ornare nunc quis vestibulum. Proin iaculis ex non ante vulputate accumsan.',
-        img: '',
+        img: 'https://i.pravatar.cc/150?img=Toretto',
         mint: true
       },
       {
@@ -91,7 +91,7 @@ const flavorList = [
         category: 'Frutal',
         shortDescription: 'Sandia fresca mentolada',
         longDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus elementum posuere pretium. Suspendisse feugiat ornare nunc quis vestibulum. Proin iaculis ex non ante vulputate accumsan.',
-        img: '',
+        img: 'https://i.pravatar.cc/150?img=IronMan',
         mint: false
       },
       {
@@ -99,7 +99,7 @@ const flavorList = [
         category: 'Postre',
         shortDescription: 'Chocolate negro con avellanas',
         longDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus elementum posuere pretium. Suspendisse feugiat ornare nunc quis vestibulum. Proin iaculis ex non ante vulputate accumsan.',
-        img: '',
+        img: 'https://i.pravatar.cc/150?img=Wonka',
         mint: false
       },
       {
@@ -107,14 +107,14 @@ const flavorList = [
         category: 'Postre',
         shortDescription: 'Chocolate con menta',
         longDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus elementum posuere pretium. Suspendisse feugiat ornare nunc quis vestibulum. Proin iaculis ex non ante vulputate accumsan.',
-        img: '',
+        img: 'https://i.pravatar.cc/150?img=Duende',
         mint: false
       }
     ]
   },
   {
+    name: 'Línea Low Cost',
     info: {
-      name: 'Línea Low Cost',
       screen: 'lowCost', 
       sizes: ['60ml'],
       price: [{ '60ml': 400 }]
@@ -125,7 +125,7 @@ const flavorList = [
         category: 'Postre',
         shortDescription: null,
         longDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus elementum posuere pretium. Suspendisse feugiat ornare nunc quis vestibulum. Proin iaculis ex non ante vulputate accumsan.',
-        img: '',
+        img: 'https://i.pravatar.cc/150?img=Cafe',
         mint: false
       },
       {
@@ -133,7 +133,7 @@ const flavorList = [
         category: 'Frutal',
         shortDescription: null,
         longDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus elementum posuere pretium. Suspendisse feugiat ornare nunc quis vestibulum. Proin iaculis ex non ante vulputate accumsan.',
-        img: '',
+        img: 'https://i.pravatar.cc/150?img=Uva',
         mint: false
       },
       {
@@ -141,7 +141,7 @@ const flavorList = [
         category: 'Postre',
         shortDescription: null,
         longDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus elementum posuere pretium. Suspendisse feugiat ornare nunc quis vestibulum. Proin iaculis ex non ante vulputate accumsan.',
-        img: '',
+        img: 'https://i.pravatar.cc/150?img=Cola',
         mint: false
       },
       {
@@ -149,7 +149,7 @@ const flavorList = [
         category: 'Postre',
         shortDescription: null,
         longDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus elementum posuere pretium. Suspendisse feugiat ornare nunc quis vestibulum. Proin iaculis ex non ante vulputate accumsan.',
-        img: '',
+        img: 'https://i.pravatar.cc/150?img=Mentol',
         mint: false
       },
       {
@@ -157,14 +157,14 @@ const flavorList = [
         category: 'Frutal',
         shortDescription: null,
         longDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus elementum posuere pretium. Suspendisse feugiat ornare nunc quis vestibulum. Proin iaculis ex non ante vulputate accumsan.',
-        img: '',
+        img: 'https://i.pravatar.cc/150?img=Manzana',
         mint: false
       }
     ]
   },
   {
+    name: 'Línea Nic Salt',
     info: {
-      name: 'Línea Nic Salt',
       screen: 'nicSalt', 
       sizes: ['30ml'],
       price: [{ '30ml': 1000 }]
@@ -175,7 +175,7 @@ const flavorList = [
         category: 'Postre',
         shortDescription: 'Cremoso sabor a capuccino',
         longDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus elementum posuere pretium. Suspendisse feugiat ornare nunc quis vestibulum. Proin iaculis ex non ante vulputate accumsan.',
-        img: '',
+        img: 'https://i.pravatar.cc/150?img=simba',
         mint: false
       },
       {
@@ -183,7 +183,7 @@ const flavorList = [
         category: 'Frutal',
         shortDescription: 'Intenso sabor a durazno',
         longDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus elementum posuere pretium. Suspendisse feugiat ornare nunc quis vestibulum. Proin iaculis ex non ante vulputate accumsan.',
-        img: '',
+        img: 'https://i.pravatar.cc/150?img=woody',
         mint: false
       },
       {
@@ -191,7 +191,7 @@ const flavorList = [
         category: 'Tabaquil seco',
         shortDescription: 'Intenso tabaco seco',
         longDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus elementum posuere pretium. Suspendisse feugiat ornare nunc quis vestibulum. Proin iaculis ex non ante vulputate accumsan.',
-        img: '',
+        img: 'https://i.pravatar.cc/150?img=Jafar',
         mint: false
       },
       {
@@ -199,7 +199,7 @@ const flavorList = [
         category: 'Postre',
         shortDescription: 'Refrescante mentol',
         longDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus elementum posuere pretium. Suspendisse feugiat ornare nunc quis vestibulum. Proin iaculis ex non ante vulputate accumsan.',
-        img: '',
+        img: 'https://i.pravatar.cc/150?img=Elsa',
         mint: false
       }
     ]
